@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar System</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Asset Management System-->
+      <a-assets>
+        <img src="planet_textures/space.jpg" id="space" />
+        <img src="planet_textures/sun.jpg" id="sun" />
+        <img src="planet_textures/mercury.jpg" id="mercury" />
+        <img src="planet_textures/venus.jpg" id="venus" />
+        <img src="planet_textures/earth.jpg" id="earth" />
+        <img src="planet_textures/mars.jpg" id="mars" />
+        <img src="planet_textures/jupiter.jpg" id="jupiter" />
+        <img src="planet_textures/saturn.jpg" id="saturn" />
+        <img src="planet_textures/uranus.jpg" id="uranus" />
+        <img src="planet_textures/neptune.jpg" id="neptune" />
+      </a-assets>
+
+      <a-sky src="#space"></a-sky>
+      <a-sphere src="#sun" position="-12 2 15" radius="3"></a-sphere>
+      <a-sphere
+        src="#mercury"
+        position="-7 2 15"
+        radius=".25"
+        animation="property: object3D.rotation.y; to: 360; dur: 5000; loop: true"
+      ></a-sphere>
+      <a-sphere
+        src="#venus"
+        position="-5 2 15"
+        radius=".5"
+        animation="property: object3D.rotation.y; to: 360; dur: 8000; loop: true"
+      ></a-sphere>
+      <a-sphere
+        src="#earth"
+        position="-3 2 -15"
+        radius=".5"
+        animation="property: object3D.rotation.y; to: 360; dur: 10000; loop: true"
+      ></a-sphere>
+      <a-sphere
+        src="#mars"
+        position="-1 2 -15"
+        radius=".25"
+        animation="property: object3D.rotation.y; to: 360; dur: 11000; loop: true"
+      ></a-sphere>
+      <a-sphere
+        src="#jupiter"
+        position="1 2 -15"
+        radius="1"
+        animation="property: object3D.rotation.y; to: 360; dur: 20000; loop: true"
+      ></a-sphere>
+      <a-sphere
+        src="#uranus"
+        position="7 2 -15"
+        radius=".75"
+        animation="property: object3D.rotation.y; to: 360; dur: 22000; loop: true"
+      ></a-sphere>
+      <a-sphere
+        src="#neptune"
+        position="10 2 -15"
+        radius=".75"
+        animation="property: object3D.rotation.y; to: 360; dur: 24000; loop: true"
+      ></a-sphere>
+
+      <!-- Saturn has rings around it that are made of torii(singular torus)-->
+
+      <a-entity position="4 2 -15">
+        <a-sphere position="0 0 0" radius=".8" src="#saturn"></a-sphere>
+        <a-torus
+          id="saturn-ring-1"
+          color="#57524A"
+          segments-tubular="50"
+          radius="3.2"
+          radius-tubular="0.1"
+          rotation="90 0 0"
+          scale=".44 .44 0.04"
+        ></a-torus>
+        <a-torus
+          id="saturn-ring-2"
+          color="#A29A87"
+          segments-tubular="50"
+          radius="2.4"
+          radius-tubular="0.2"
+          rotation="90 0 0"
+          scale=".44 .44 0.04"
+        ></a-torus>
+      </a-entity>
+
+      <a-light type="point" intensity="2" position="-8 2 -6"></a-light>
+    </a-scene>
+  </body>
+</html>
